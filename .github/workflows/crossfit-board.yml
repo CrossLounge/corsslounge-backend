@@ -25,10 +25,12 @@ jobs:
           distribution: 'adopt' # See 'Supported distributions' for available options
       - name: List directory
         run: ls ./crossfit-back/crossfit-board
+      - name: List Gradle tasks
+        working-directory: ./crossfit-back/crossfit-board
+        run: ./gradlew tasks
       - name: Change directory and build
         working-directory: ./crossfit-back/crossfit-board
         run: ./gradlew clean build
-
       - name: DockerHub Login
         uses: docker/login-action@v2
         with:
