@@ -23,9 +23,13 @@ jobs:
         with:
           java-version: '21'
           distribution: 'adopt' # See 'Supported distributions' for available options
+      - name: move directory
+        run: cd crossfit-back/crossfit-board
+      - name: current 
+        run : ls
       - name: Build with Gradle (crossfit-board)
         run: |
-          ./crossfit-back/crossfit-board/gradlew -p crossfit-board clean build
+          gradlew -p crossfit-board clean build
 
       - name: DockerHub Login
         uses: docker/login-action@v2
