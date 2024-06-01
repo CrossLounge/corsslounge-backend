@@ -149,9 +149,9 @@ hs_err_pid*
 *.orig
 # *.yml
 *.properties
-.gradle
+# .gradle
 .idea
-*.gradle
+# *.gradle
 *.idea
 .mvn
 # properties/**
