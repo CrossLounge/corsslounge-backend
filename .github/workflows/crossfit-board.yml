@@ -20,8 +20,10 @@ jobs:
         uses: gradle/gradle-build-action@v3
       - name: Look current 
         run: ls
+      - name: move directory 
+        run: cd crossfit-back
       - name: Build with Gradle
-        run: ./crossfit-back/crossfit-board/gradlew build
+        run: ./gradlew build
       - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
