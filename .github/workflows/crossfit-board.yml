@@ -37,7 +37,10 @@ jobs:
       - name: DockerHub Push
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_CROSSFIT_BOARD_IMAGE_NAME }}
 
-      - name: Trigger Jenkins Job
-        run: >
-          curl -X POST "http://${{ secrets.JENKINS_URL }}/job/${{ secrets.JENKINS_CROSSFIT_BOARD_JOB_NAME }}/build" \
-          --user "${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }}"
+      - name: trigger jenkins job.
+        uses: appleboy/jenkins-action@master
+        with:
+          url: ${{ secrets.JENKINS_URL }}
+          user: ${{ secrets.JENKINS_USER }}
+          token: ${{ secrets.JENKINS_TOKEN }}
+          job: ${{ secrets.JENKINS_CROSSFIT_BOARD_JOB_NAME }}
