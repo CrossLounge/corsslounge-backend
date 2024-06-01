@@ -2,11 +2,11 @@ name: crossfit-board CI
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "main" ]
       paths:
         - 'crossfit-back/crossfit-board/**'
   pull_request:
-    branches: [ "develop" ]
+    branches: [ "main" ]
     paths:
       - 'crossfit-back/crossfit-board/**'
 
