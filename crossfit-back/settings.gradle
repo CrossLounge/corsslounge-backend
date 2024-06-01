@@ -1,0 +1,5 @@
+rootProject.name = 'crossfit-back'
+include ':crossfit-discovery'
+include ':crossfit-gateway'
+include ':crossfit-auth'
+include ':crossfit-board'
