@@ -3,8 +3,12 @@ name: crossfit-board CI
 on:
   push:
     branches: [ "develop" ]
+      paths:
+        - 'crossfit-back/crossfit-board/**'
   pull_request:
     branches: [ "develop" ]
+    paths:
+      - 'crossfit-back/crossfit-board/**'
 
 jobs:
   build:
